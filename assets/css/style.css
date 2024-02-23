@@ -6,9 +6,18 @@
 }
 body {
   min-width: 360px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 main {
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  /* background-color: #000; */
 }
 a,
 a:hover {
@@ -239,6 +248,7 @@ form.sub-form button {
   position: relative;
   overflow: hidden;
   padding-bottom: 50px;
+  background-color: #fff;
 }
 
 .text-img::before {
@@ -249,7 +259,7 @@ form.sub-form button {
   width: 100%;
   height: 213px;
   background: linear-gradient(180deg, #f7d593 0%, #fff 100%);
-  z-index: -1;
+  z-index: 0;
 }
 
 .text-img h2 {
@@ -363,7 +373,7 @@ form.sub-form button {
   }
 
   .text-img .item:nth-of-type(even) p,
-  .text-img .item:nth-of-type(even) h3 {
+  .text-img .item:nth-of-type(even) h4 {
     text-align: left;
     width: 100%;
   }
@@ -421,6 +431,7 @@ form.sub-form button {
   height: 353px;
   background-color: #f7d593;
   padding: 0 18px;
+  width: 100%;
 }
 
 .form-sec h6 {
@@ -454,6 +465,7 @@ form.sub-form button {
 /* contact form  */
 .contact-form-sec {
   background-color: #000;
+  height: 100%;
 }
 .contact-form-sec .img-side {
   height: 452px;
@@ -608,8 +620,7 @@ form.sub-form button {
   font-weight: 700;
   line-height: normal;
   text-align: left;
-  margin-top: 30px;
-  margin-bottom: 13px;
+  margin-bottom: 10px;
 }
 .membership-sec .cards-list .cards h2 {
   color: #000;
@@ -621,21 +632,69 @@ form.sub-form button {
   font-weight: 700;
   line-height: normal;
   text-align: left;
-  margin-bottom: 23px;
+  margin-bottom: 15px;
 }
 .membership-sec .cards-list .cards h3 {
   color: #000;
   font-feature-settings: "clig" off, "liga" off;
   font-family: Inter;
-  font-size: 16px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   text-align: left;
-  margin-bottom: 33px;
+  margin-bottom: 25px;
 }
+
 .membership-sec .cards-list .cards .features {
-  display: none;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 0 18px 0;
+}
+.membership-sec .cards-list .cards .features > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.membership-sec .cards-list .cards .features > div h6 {
+  color: #000;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Inter;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.membership-sec .cards-list .cards .features > div span {
+  width: 18px;
+  height: 24px;
+  display: block;
+  border-radius: 100px;
+  border: 2px solid #000;
+  gap: 20px;
+  position: relative;
+}
+.membership-sec .cards-list .cards .features > div span::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.membership-sec .cards-list .cards .features > div span.yes::after {
+  background-image: url("../images/check.svg");
+  background-size: 92%;
+  background-position: 180% 50%;
+}
+.membership-sec .cards-list .cards .features > div span.no::after {
+  background-image: url("../images/cross.svg");
+  background-size: 70%;
+  background-position: 60% 50%;
 }
 @media screen and (min-width: 768px) {
   .membership-sec {
@@ -656,56 +715,24 @@ form.sub-form button {
     margin: 0;
     max-width: none;
   }
-
   .membership-sec .cards-list .cards .features {
     gap: 20px;
-    display: flex;
-    flex-direction: column;
+
     padding: 20px 0 25px 0;
   }
-  .membership-sec .cards-list .cards .features > div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
+  .membership-sec .cards-list .cards h4 {
+    margin-top: 30px;
+    margin-bottom: 13px;
   }
-
+  .membership-sec .cards-list .cards h2 {
+    margin-bottom: 23px;
+  }
+  .membership-sec .cards-list .cards h3 {
+    margin-bottom: 33px;
+    font-size: 16px;
+  }
   .membership-sec .cards-list .cards .features > div h6 {
-    color: #000;
-    font-feature-settings: "clig" off, "liga" off;
-    font-family: Inter;
     font-size: 12px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-  }
-
-  .membership-sec .cards-list .cards .features > div span {
-    width: 18px;
-    height: 24px;
-    display: block;
-    border-radius: 100px;
-    border: 2px solid #000;
-    gap: 20px;
-    position: relative;
-  }
-  .membership-sec .cards-list .cards .features > div span::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .membership-sec .cards-list .cards .features > div span.yes::after {
-    background-image: url("../images/check.svg");
-    background-size: 92%;
-    background-position: 180% 50%;
-  }
-  .membership-sec .cards-list .cards .features > div span.no::after {
-    background-image: url("../images/cross.svg");
-    background-size: 70%;
-    background-position: 60% 50%;
   }
 }
 @media screen and (min-width: 1200px) {
