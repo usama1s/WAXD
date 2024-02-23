@@ -667,6 +667,7 @@ form.sub-form button {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 10px;
   }
 
   .membership-sec .cards-list .cards .features > div h6 {
